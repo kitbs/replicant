@@ -1,0 +1,54 @@
+{
+    "name": "inspheric/replicant",
+    "description": "Replicate Laravel Eloquent models and their nested relationships.",
+    "keywords": [
+        "inspheric",
+        "replicant"
+    ],
+    "homepage": "https://github.com/inspheric/replicant",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kit Burton-Senior",
+            "email": "kit.senior@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inspheric\\Replicant\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Inspheric\\Replicant\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Inspheric\\Replicant\\ReplicantServiceProvider"
+            ],
+            "aliases": {
+                "Replicant": "Inspheric\\Replicant\\ReplicantFacade"
+            }
+        }
+    }
+}
